@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <div style="margin-bottom: 10px">
+        <button @click="turnTo('/home')">home</button>
+        <button @click="turnTo('/learnRouter')">learnRouter</button>
+
+      </div>
+      <router-view/>
+    </div>
+
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {},
+  methods: {
+    turnTo(path) {
+      location.hash = path;
+    }
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+button {
+  margin-right: 4px;
 }
 </style>

@@ -3,7 +3,7 @@
     <div>
       <div style="margin-bottom: 10px">
         <button @click="turnTo('/home')">home</button>
-        <button @click="turnTo('/learnRouter')">learnRouter</button>
+        <button @click="turnTo(`/learnRouter/${Math.floor((Math.random()*100)+1)}?name=123`)">learnRouter</button>
 
       </div>
       <router-view/>
@@ -20,7 +20,9 @@ export default {
   components: {},
   methods: {
     turnTo(path) {
-      location.hash = path;
+      if (location.pathname !== path) {
+        this.$router.push(path);
+      }
     }
   }
 };

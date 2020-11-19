@@ -1,6 +1,7 @@
 <template>
   <div>
-    {{pathQuery}}
+    name:{{ name }} &nbsp;
+    id:{{ pathQuery }}
     <pre>
       url的hash，
       url的hash也就是锚点（#），本质上是改变了window.location.href的属性
@@ -39,6 +40,14 @@
       在不特别影响首页显示延迟的情况下，根页面合理导入复用组件，
       而路由页面中的组件按需进行懒加载,
       即如果组件不大且使用不太频繁, 直接在路由页面中导入组件, 如果组件使用较为频繁使用懒加载
+
+      路由嵌套
+      类似于/home/news，在umi中，umi已经把这个事情做了=》 路由就是文件夹的顺序
+      vue还是要自己手动
+
+      $router 和 $route的区别
+      可以理解成router为vue-router的实例，是vue生成的
+      route 是当前页面的路由的参数啊，路径啊的一些属性
     </pre>
   </div>
 </template>
@@ -47,9 +56,10 @@
 export default {
   name: "routerLesson",
   data() {
-    const {params} = this.$route;
+    const {params, query: {name = ''} = {}} = this.$route;
     return {
-      pathQuery: params.id
+      pathQuery: params.id,
+      name
     }
   }
 }

@@ -4,6 +4,7 @@
       <div style="margin-bottom: 10px">
         <button @click="turnTo('/home')">home</button>
         <button @click="turnTo(`/learnRouter/${Math.floor((Math.random()*100)+1)}?name=123`)">learnRouter</button>
+        <button @click="turnTo('/qt')">qt</button>
       </div>
       <router-view/>
     </div>

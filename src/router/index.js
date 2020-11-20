@@ -23,7 +23,16 @@ const routes = [
     path: '/qt',
     component: QT,
     children: [
-      {path: '', redirect: 'qt1'},
+      {
+        path: '/qt', redirect: (to) => {
+          const path = sessionStorage.getItem('path');
+          if (path.startsWith('/qt/')) {
+            return path
+          }else {
+            return '/qt/qt1';
+          }
+        }
+      },
       {path: 'qt1', component: QT1},
       {path: 'qt2', component: QT2},
     ]
@@ -33,4 +42,17 @@ const router = new VueRouter({
   routes,
   mode: 'history',
 });
+/*
+* 全局路由监听
+* 分为前置 和 后置
+* 后置没有next函数
+* */
+router.beforeEach((to, from, next) => {
+  // console.log(from, to);
+  sessionStorage.setItem('path', from.path);
+  next();
+});
+router.afterEach((to, from) => {
+  // console.log(to, from);
+})
 export default router;

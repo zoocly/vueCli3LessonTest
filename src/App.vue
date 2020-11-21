@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import TabBar from "@/components/TabBar/index";
+import TabBar from "components/TabBar/index";
 
 export default {
   name: 'App',

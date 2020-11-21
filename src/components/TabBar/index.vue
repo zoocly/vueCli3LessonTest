@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .tabBar {
   height: 1.25rem;
-  background: #ccc;
+  background: #f6f6f6;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

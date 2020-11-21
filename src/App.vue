@@ -1,35 +1,37 @@
 <template>
   <div id="app">
-    <div>
-      <div style="margin-bottom: 10px">
-        <button @click="turnTo('/home')">home</button>
-        <button @click="turnTo(`/learnRouter/${Math.floor((Math.random()*100)+1)}?name=123`)">learnRouter</button>
-        <button @click="turnTo('/qt')">qt</button>
-      </div>
+    <div class="main">
       <router-view/>
     </div>
-
-
+    <TabBar/>
   </div>
 </template>
 
 <script>
-
+import TabBar from "@/components/TabBar/index";
 export default {
   name: 'App',
-  components: {},
+  components: {
+    TabBar
+  },
   methods: {
-    turnTo(path) {
-      if (location.pathname !== path) {
-        this.$router.push(path);
-      }
-    }
+
   }
 };
 </script>
 
 <style>
-button {
-  margin-right: 4px;
+body {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1;
 }
 </style>

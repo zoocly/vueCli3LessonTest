@@ -2,11 +2,16 @@ import VueRouter from "vue-router";
 import Vue from "vue";
 
 
-const Home = () => import('@/page/home');
-const LearnRouter = () => import('@/page/routerLesson');
+const LearnRouter = () => import('@/page/test/routerLesson');
 const QT = () => import('@/page/test')
 const QT1 = () => import('@/page/test/qiantao1');
 const QT2 = () => import('@/page/test/qiantao2');
+
+
+const Home = () => import('@/page/home');
+const Classification = () => import('@/page/classification');
+const Shopping = () => import('@/page/shopping');
+const Profile = () => import('@/page/profile');
 
 // 使用vue加载vue-router
 Vue.use(VueRouter);
@@ -16,6 +21,10 @@ const routes = [
   // 重定向
   {path: '/', redirect: '/home'},
   {path: '/home', component: Home},
+  {path: '/classification', component: Classification},
+  {path: '/shopping', component: Shopping},
+  {path: '/profile', component: Profile},
+
   // 动态路由, 懒加载
   {path: '/learnRouter/:id', component: LearnRouter},
   // 路由嵌套
@@ -28,7 +37,7 @@ const routes = [
           const path = sessionStorage.getItem('path');
           if (path.startsWith('/qt/')) {
             return path
-          }else {
+          } else {
             return '/qt/qt1';
           }
         }

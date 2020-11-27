@@ -20,7 +20,6 @@
     "@vue/cli-service": "~4.5.0",
     "lib-flexible": "^0.3.2",
     "mockjs": "^1.1.0",
-    "postcss-pxtorem": "^5.1.1",
     "vue-template-compiler": "^2.6.11",
     "webpack-api-mocker": "^1.7.6"
   }

@@ -1,23 +1,18 @@
 <template>
   <div>
-    123
+    12322222
   </div>
 </template>
 
 <script>
 import request from "@/untils/request";
 import axios from 'axios';
+import {awsl} from '@/services'
 export default {
   name: "home",
-  mounted() {
-    request({
-      url:'/mock/news',
-      baseURL:''
-    }).then(res =>{
-      console.log(res,'res');
-    }).catch(err=>{
-      console.log(err, 'err');
-    })
+  async mounted() {
+    const res = await awsl({a:1});
+    console.log(res,'ssss')
   }
 }
 </script>

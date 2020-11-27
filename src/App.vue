@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style>
-@import "main.css";
+@import "../src/assets/css/base.css";
 
 #app {
   height: 100vh;

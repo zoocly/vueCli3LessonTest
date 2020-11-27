@@ -48,6 +48,6 @@ img {
 }
 
 .red {
-  color: red;
+  color: var(--color-high-text);
 }
 </style>

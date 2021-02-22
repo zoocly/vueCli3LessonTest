@@ -3,7 +3,7 @@
     <div class="main">
       <router-view/>
     </div>
-    <TabBar :list="list"/>
+<!--    <TabBar :list="list"/>-->
   </div>
 </template>
 

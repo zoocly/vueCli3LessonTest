@@ -1,19 +1,20 @@
 <template>
   <div>
-    <div class="homeNav">
-      <Navbar tit="首页">
-        <template #left>
-          <div></div>
-        </template>
-      </Navbar>
-    </div>
-    <Swiper>
-      <SwiperItem v-for="item in banner">
-        <!--          <a :href="item.link">-->
-        <img :src="item.url">
-        <!--          </a>-->
-      </SwiperItem>
-    </Swiper>
+
+<!--    <div class="homeNav">-->
+<!--      <Navbar tit="首页">-->
+<!--        <template #left>-->
+<!--          <div></div>-->
+<!--        </template>-->
+<!--      </Navbar>-->
+<!--    </div>-->
+<!--    <Swiper>-->
+<!--      <SwiperItem v-for="item in banner">-->
+<!--        &lt;!&ndash;          <a :href="item.link">&ndash;&gt;-->
+<!--        <img :src="item.url">-->
+<!--        &lt;!&ndash;          </a>&ndash;&gt;-->
+<!--      </SwiperItem>-->
+<!--    </Swiper>-->
   </div>
 </template>
 

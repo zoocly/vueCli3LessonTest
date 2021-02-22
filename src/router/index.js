@@ -6,6 +6,7 @@ const LearnRouter = () => import('@/page/test/routerLesson');
 const QT = () => import('@/page/test')
 const QT1 = () => import('@/page/test/qiantao1');
 const QT2 = () => import('@/page/test/qiantao2');
+const AntdTest = () =>import('@/page/test/antdTest');
 
 
 const Home = () => import('@/page/home');
@@ -27,6 +28,9 @@ const routes = [
 
   // 动态路由, 懒加载
   {path: '/learnRouter/:id', component: LearnRouter},
+
+  {path: '/antdTest', component: AntdTest},
+
   // 路由嵌套
   {
     path: '/qt',
